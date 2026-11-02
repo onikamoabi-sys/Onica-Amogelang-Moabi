@@ -172,7 +172,7 @@ export const InlineEditableText: React.FC<InlineEditableTextProps> = ({
     );
   }
 
-  // Not editing view:
+// Not editing view:
   if (!isClickToEditEnabled || disabled) {
     return <Component className={className}>{children || value}</Component>;
   }
@@ -184,9 +184,13 @@ export const InlineEditableText: React.FC<InlineEditableTextProps> = ({
       className={`relative group/editable cursor-pointer transition-all duration-200 rounded px-1 -mx-1 hover:bg-amber-400/10 hover:outline hover:outline-1 hover:outline-dashed hover:outline-amber-400/70 inline-block ${className}`}
     >
       <span>{children || value}</span>
-      <span className="inline-flex items-center ml-1.5 opacity-0 group-hover/editable:opacity-100 text-amber-400 transition-opacity duration-150 align-baseline pointer-events-none">
-        <Edit2 className="w-3 h-3" />
-      </span>
+      
+      {/* Edit icon only renders when isClickToEditEnabled is true */}
+      {isClickToEditEnabled && (
+        <span className="inline-flex items-center ml-1.5 opacity-0 group-hover/editable:opacity-100 text-amber-400 transition-opacity duration-150 align-baseline pointer-events-none">
+          <Edit2 className="w-3 h-3" />
+        </span>
+      )}
     </Component>
   );
 };
