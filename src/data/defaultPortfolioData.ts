@@ -1,9 +1,9 @@
 import { FullPortfolioData } from '../types/portfolio';
 
-export const defaultPortfolioData: FullPortfolioData = {
+export const defaultPortfolioData: FullPortfolioData ={
   "settings": {
-    "isPrivateMode": true,
-    "accessPasscode": "ONICA2025",
+    "isPrivateMode": false,
+    "accessPasscode": "",
     "allowedTokens": [
       "recruiter",
       "sasol",
